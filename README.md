@@ -3,4 +3,4 @@
 
 ## About project
 
-This is a simple implementation of the popular game "2048". You can see the result at [link] (https://yastrebdev.github.io/2048/)
+This is a simple implementation of the popular game "2048". You can see the result at [link](https://yastrebdev.github.io/2048/)
