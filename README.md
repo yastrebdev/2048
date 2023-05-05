@@ -10,3 +10,7 @@ This is a simple implementation of the popular game "2048". You can see the resu
 - [ ] Create a "Play" button
 - [ ] Implement saving the result of the current game in the local storage, so that when you reload the browser you can continue the game
 - [ ] Output the current score, save the number of points after the first game
+
+## Working with the archive
+
+The architecture of the application is simple and is run from a single html file through a local server. If you use VS Code, use the "**Go Live**" function
