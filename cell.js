@@ -1,45 +1,45 @@
 export class Cell {
-  constructor (gridElement, x, y) {
-    const cell = document.createElement('div')
-    cell.classList.add('cell')
-    gridElement.append(cell)
-    this.x = x
-    this.y = y
+  constructor(gridElement, x, y) {
+    const cell = document.createElement('div');
+    cell.classList.add('cell');
+    gridElement.append(cell);
+    this.x = x;
+    this.y = y;
   }
 
   linkTile(tile) {
-    tile.setXY(this.x, this.y)
-    this.linkedTile = tile
+    tile.setXY(this.x, this.y);
+    this.linkedTile = tile;
   }
 
   unLinkTile() {
-    this.linkedTile = null
+    this.linkedTile = null;
   }
 
   isEmpty() {
-    return !this.linkedTile
+    return !this.linkedTile;
   }
 
   linkTileForMerge(tile) {
-    tile.setXY(this.x, this.y)
-    this.linkedTileForMerge = tile
+    tile.setXY(this.x, this.y);
+    this.linkedTileForMerge = tile;
   }
 
   unLinkTileForMerge() {
-    this.linkedTileForMerge = null
-  } 
-
-  hasTileForMerge() {
-    return !!this.linkedTileForMerge
+    this.linkedTileForMerge = null;
   }
 
-  canAccept (newTile) {
-    return this.isEmpty() || (!this.hasTileForMerge() && this.linkedTile.value === newTile.value)
+  hasTileForMerge() {
+    return !!this.linkedTileForMerge;
+  }
+
+  canAccept(newTile) {
+    return this.isEmpty() || (!this.hasTileForMerge() && this.linkedTile.value === newTile.value);
   }
 
   mergeTiles() {
-    this.linkedTile.setValue(this.linkedTile.value + this.linkedTileForMerge.value)
-    this.linkedTileForMerge.removeFromDOM()
-    this.unLinkTileForMerge()
+    this.linkedTile.setValue(this.linkedTile.value + this.linkedTileForMerge.value);
+    this.linkedTileForMerge.removeFromDOM();
+    this.unLinkTileForMerge();
   }
 }
